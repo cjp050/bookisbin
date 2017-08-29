@@ -32,5 +32,10 @@ class TestISBN < Minitest::Test
         isbn = "1 2 3"
         assert_equal("123", clean(isbn))
     end 
+    
+    def test_eight
+        isbn = "1-2-3"
+        assert_equal("123", isbn_10(isbn))
+    end 
 end 
 

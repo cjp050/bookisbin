@@ -7,4 +7,10 @@ class TestISBN < Minitest::Test
         isbn = "1234"
         assert_equal(false, isbn_length(isbn))
     end 
+ 
+
+    def test_two 
+        isbn = "1234567890"
+        assert_equal(true, isbn_length(isbn))
+    end 
 end 

@@ -1,3 +1,9 @@
+def clean(number) 
+    string = number
+    string.gsub!("-", "")
+    string.gsub(" ", "")
+end 
+
 def isbn_length (number)
     string = number
     if string.length == 10 

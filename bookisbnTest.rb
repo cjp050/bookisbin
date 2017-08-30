@@ -50,6 +50,15 @@ class TestISBN < Minitest::Test
         assert_equal(true, numbers_only(isb1))
         assert_equal(true, numbers_only(isb2))
     end
+
+    def test_ten 
+        isbn("877195869x")
+        isbn1("0471958697")
+        isbn2("032114653")
+        assert_equal(true, numbers_only(isbn))
+        assert_equal(true, numbers_only(isbn1))
+        assert_equal(true, numbers_only(isbn2))
+    end 
 end 
 
    

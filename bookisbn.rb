@@ -15,7 +15,24 @@ def math_isbn_10(number)
     else
          false
     end
+ end
+
+    def math_isbn_13(number)
+        isbn = number
+        isbn = isbn.scan /\w/
+        isbn = isbn[0..12]
+        total = (1*isbn[0].to_i) + (3*isbn[1].to_i) + (1*isbn[2].to_i) + (3*isbn[3].to_i) + (1*isbn[4].to_i) + (3*isbn[5].to_i) + (1*isbn[6].to_i) + (3*isbn[7].to_i) + (1*isbn[8].to_i) + (3*isbn[9].to_i) + (1*isbn[10].to_i) + (3*isbn[11].to_i) 
+        total = total % 10
+        ten = 10
+        post_total = ten - total
+        post_total = post_total % 10
+        isbn[12] = isbn[12].to_i
+        if post_total == isbn[12]
+            true
+        else
+            false
     end
+ end
  
  def check_class(number) 
     if number.is_a? String 
@@ -30,9 +47,16 @@ def math_isbn_10(number)
     number.is_a? String
     end
 
-def numbers_only(number)
-    number !~ /\D/
-end 
+    def numbers_only(number)
+        if number !~ /\D/    
+           true
+       elsif
+           number.chop !~ /\D/
+           true
+       else 
+           false
+       end 
+       end
 
 def isbn_10(number)
     clean_number = clean("#{number}")

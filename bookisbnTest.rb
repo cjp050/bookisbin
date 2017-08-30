@@ -32,10 +32,24 @@ class TestISBN < Minitest::Test
         isbn = "1 2 3"
         assert_equal("123", clean(isbn))
     end 
-    
-    def test_eight
-        isbn = "1-2-3"
-        assert_equal("123", isbn_10(isbn))
-    end 
+
+    def test_nine
+        isbn = "1y23"
+        isb1 = "1-2-3"
+        isb2 = "123"
+        assert_equal(false, numbers_only(isbn))
+        assert_equal(false, numbers_only(isb1))
+        assert_equal(true, numbers_only(isb2))
+    end
+
+    def test_check_if_string_converts_array_and_integer
+        isbn = "123"
+        isb1 = ["3","2","1"]
+        isb2 = 123
+        assert_equal(true, numbers_only(isbn))
+        assert_equal(true, numbers_only(isb1))
+        assert_equal(true, numbers_only(isb2))
+    end
 end 
 
+   

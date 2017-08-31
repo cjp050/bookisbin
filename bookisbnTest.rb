@@ -72,6 +72,45 @@ class TestISBN < Minitest::Test
         assert_equal(true, math_isbn_13(isb1))
         assert_equal(true, math_isbn_13(isb2))
     end
+
+    def test_full
+		isbn = "mined"
+		isb1 = "04" 
+		isb2 = "1234567890"
+		isb3 = "047 19- 5- 86-97-"
+	  	isb4 = "047 19 5 8697"
+	  	isb5 = "0471958697"
+	  	isb6 = "0321146530"
+	  	isb7 = "877195869x"
+	  	isb8 = "9780470059029"
+	  	isb9 = "9780131495050"
+	  	isb10 = "9780471486480"
+	  	isb11 = "4780470059029"
+	  	isb12 = "0-321@14653-0"
+	  	isb13 = "877195x869"
+	  	isb14 = ""
+	  	isb15 = " "
+	  	isb16 = "-"
+	  #	isb17 = "978013149505x"
+		assert_equal(false, isbn_check(isbn))
+		assert_equal(false, isbn_check(isb1))
+		assert_equal(false, isbn_check(isb2))
+		assert_equal(true, isbn_check(isb3))
+		assert_equal(true, isbn_check(isb4))
+		assert_equal(true, isbn_check(isb5))
+		assert_equal(true, isbn_check(isb6))
+		assert_equal(true, isbn_check(isb7))
+		assert_equal(true, isbn_check(isb8))
+		assert_equal(true, isbn_check(isb9))
+		assert_equal(true, isbn_check(isb10))
+		assert_equal(false, isbn_check(isb11))
+		assert_equal(false, isbn_check(isb12))
+		assert_equal(false, isbn_check(isb13))
+		assert_equal(false, isbn_check(isb14))
+		assert_equal(false, isbn_check(isb15))
+		assert_equal(false, isbn_check(isb16))
+		#assert_equal(false, isbn_check(isb17))
+    end
 end 
 
    

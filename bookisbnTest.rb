@@ -70,7 +70,7 @@ class TestISBN < Minitest::Test
         isb2 = "978 0 471 48648 0"
         assert_equal(true, math_isbn_13(isbn))
         assert_equal(true, math_isbn_13(isb1))
-        assert_equal(true, math_isbn_13(isb2))
+        assert_equal(true, math_isbn_13(isb2)) 
     end
 
     def test_full

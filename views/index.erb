@@ -1,0 +1,20 @@
+<html>
+<h3><p>Howdy, please enter your value in the box bellow</p></h3>
+<body>
+<button onclick="myFunction()">Add Box</button>
+<form id="myInput" method="post" action="eval">
+    <input onclick="bookisbn.rb" type="submit">
+</form>
+
+
+<script>
+function myFunction(){
+    var input = document.createElement("input");
+    input.type="text"; 
+    input.required="true";
+    input.name="names[]"
+    document.body.appendChild(input).value;
+}
+</script>
+</body>
+</html>

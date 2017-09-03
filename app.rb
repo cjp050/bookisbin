@@ -6,7 +6,7 @@ erb :index
 end 
 
 get '/enter_isbn' do
-erb :enter_isbn
+erb :index
 end
 
 post '/enter_isbn' do

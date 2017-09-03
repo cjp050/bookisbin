@@ -101,7 +101,6 @@ def isbn_10(number)
     isbn_length("#{clean_number}") 
     end 
 
-
 def clean(number)
     string = number
     string.gsub!("-", "")
@@ -125,3 +124,12 @@ end
             false
     end     
 end 
+
+# 1-18 does everything that the other functions do
+# 39-56 gives the rules how to decode a 10 digit ISBN
+# 58-73 gives the rules how to decode a 13 digit ISBN
+# 75-86 determines if its a ISBN-10 / ISBN-13
+# 88-97 gives a subset of rules for numbers only
+# 99-102 cleans 10 digit numbers*
+# *104-108 clean: removes - and spaces
+# 110-126 rules for both ISBN 10 and 13

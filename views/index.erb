@@ -1,20 +1,7 @@
-<html>
-<h3><p>Howdy, please enter your value in the box bellow</p></h3>
-<body>
-<button onclick="myFunction()">Add Box</button>
-<form id="myInput" method="post" action="eval">
-    <input onclick="bookisbn.rb" type="submit">
-</form>
 
-
-<script>
-function myFunction(){
-    var input = document.createElement("input");
-    input.type="text"; 
-    input.required="true";
-    input.name="names[]"
-    document.body.appendChild(input).value;
-}
-</script>
-</body>
-</html>
+<p>Enter a 10 or 13 digit ISBN number.</p>
+<form method = "post" action = "/enter_isbn">
+<input type="text" placeholder="ISBN number" name="isbn_data">
+<br>
+<input type = "submit">
+</form></center>

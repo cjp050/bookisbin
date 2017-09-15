@@ -1,3 +1,4 @@
+
 def isbn_check(number)
 	if check_class(number) == true
 		number = clean(number)
@@ -132,4 +133,4 @@ end
 # 88-97 gives a subset of rules for numbers only
 # 99-102 cleans 10 digit numbers*
 # *104-108 clean: removes - and spaces
-# 110-126 rules for both ISBN 10 and 13
+# 110-126 rules for both ISBN 10 and 13 

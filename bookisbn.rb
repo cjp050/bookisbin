@@ -28,25 +28,6 @@ def isbn_check(number)
     end
      
 end 
- 
-#   isbn_check ("mined")
-#   isbn_check("04") 
-#   isbn_check ("1234567890")
-#   isbn_check("047 19- 5- 86-97-")
-#   isbn_check("047 19 5 8697")
-#   isbn_check("0471958697")
-#   isbn_check("0321146530")
-#   isbn_check("877195869x")
-#   isbn_check("9780470059029")
-#   isbn_check("9780131495050")
-#   isbn_check("9780471486480")
-#   isbn_check("4780470059029")
-#   isbn_check("0-321@14653-0")
-#   isbn_check("877195x869")
-#   isbn_check("")
-#   isbn_check(" ")
-#   isbn_check("-")
-  # isbn_check("978013149505x")
 
 def math_isbn_10(number)
     isbn = number
@@ -147,6 +128,25 @@ end
             false
     end     
 end 
+
+def get_file()
+    Aws::S3::Client.new(
+        access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+        secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
+        region: ENV['AWS_REGION']
+        )
+    s3 = Aws::S3::Client.new
+    csv_file_from_bucket = s3.get_object(bucket: 'minedmindstwoboogaloo', key: 'awsisbn.csv')
+    csv_file_read = csv_file_from_bucket.body.read
+    p csv_file_read
+    split_csv = csv_file_read.split
+    list = []
+    split_csv.each do |item|
+        item.gsub(/"/, '')
+        list << item
+    end
+    # p list
+end
 
 # 1-18 does everything that the other functions do
 # 39-56 gives the rules how to decode a 10 digit ISBN

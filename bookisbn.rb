@@ -1,3 +1,4 @@
+require_relative 'bucket.rb'
 
 def isbn_check(number)
 	if check_class(number) == true
@@ -7,15 +8,25 @@ def isbn_check(number)
 				math_isbn_10(number)
 			elsif isbn_length_13(number) == true
 				math_isbn_13(number)
-			else 
-				false
+            else
+                valid = false 
+                bucketlist = number.to_s + ", " + valid.to_s
+                send_to_bucket(bucketlist)
+                valid
 			end
-		else
-			false
+        else
+            valid = false
+            bucketlist = number.to_s + ", " + valid.to_s
+            send_to_bucket(bucketlist)
+            valid
 		end
-	else
-		false
-	end
+    else
+        valid = false
+        bucketlist = number.to_s + ", " + valid.to_s
+        send_to_bucket(bucketlist)
+        valid
+    end
+     
 end 
  
 #   isbn_check ("mined")
@@ -49,10 +60,15 @@ def math_isbn_10(number)
         isbn[9] = isbn[9].to_i
     end
     if check_sum == isbn[9]
-    
-         true
+        valid = true
+        bucketlist = number.to_s + ", " + valid.to_s
+        send_to_bucket(bucketlist)
+        valid
     else
-         false
+        valid = false
+        bucketlist = number.to_s + ", " + valid.to_s
+        send_to_bucket(bucketlist)
+        valid
     end
  end
 
@@ -67,9 +83,15 @@ def math_isbn_10(number)
         post_total = post_total % 10
         isbn[12] = isbn[12].to_i
         if post_total == isbn[12]
-            true
+            valid = true
+            bucketlist = number.to_s + ", " + valid.to_s
+            send_to_bucket(bucketlist)
+            valid
         else
-            false
+            valid = false
+            bucketlist = number.to_s + ", " + valid.to_s
+            send_to_bucket(bucketlist)
+            valid
     end
  end
  

@@ -444,9 +444,6 @@ GEM
       tilt (~> 2.0)
     tilt (2.0.8)
 
-PLATFORMS
-  x64-mingw32
-
 DEPENDENCIES
   aws-sdk (~> 3)
   sinatra (~> 2.0.0)

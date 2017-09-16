@@ -445,6 +445,7 @@ GEM
     tilt (2.0.8)
 
 PLATFORMS
+  ruby 
 
 DEPENDENCIES
   aws-sdk (~> 3)
